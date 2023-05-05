@@ -11,6 +11,7 @@ import ru.itis.kr1_oris.model.Role;
 import java.util.Collection;
 import java.util.Set;
 
+
 @Setter
 @Getter
 public class JwtAuthentication implements Authentication {

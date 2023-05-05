@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,5 +20,10 @@ public class WeatherController {
     @PostMapping("get/weather")
     private ResponseEntity<String> getDegrees(@RequestBody CityForWeatherDto cityForWeatherDto)   {
         return ResponseEntity.ok("Температура:" + historyService.create(cityForWeatherDto).getDegreesCelsius());
+    }
+
+    @GetMapping("/hi")
+    private ResponseEntity<String> getHi() {
+        return ResponseEntity.ok("hiii");
     }
 }
